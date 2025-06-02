@@ -1,0 +1,19 @@
+enum UsbDataType : byte {
+  NONE = 0,
+  SET_SE_MODE = 1,
+  SE_LATENCY = 2,
+  OPUS_LATENCY = 3,
+  AUDIO_DATA = 4
+}
+
+table UsbPacket {
+  type: UsbDataType;
+  platform: byte;
+  sequence: ushort;
+  data: [ubyte];
+}
+
+schema for revision number
+retry for each packet if crc doesn't match
+
+find hook
